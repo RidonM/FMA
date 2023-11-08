@@ -1,0 +1,21 @@
+h1 {
+    background-color: #00008B;
+    color: chartreuse;
+    font-family: Arial;
+    font-size: 50px;
+    text-align: center;
+}
+
+h2 {
+    background-color: orange;
+    color: purple;
+    font-family: 'Times New Roman';
+    font-size: 40px;
+}
+
+p {
+    background-color: rgb(92, 6, 88);
+    color: yellow;
+    font-family: sans-serif;
+    text-align: right;
+}
