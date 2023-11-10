@@ -1,9 +1,22 @@
+/*
+1.
+
+*/
 nav {
     padding: 20px 20px;
     border-bottom: 1px solid mediumseagreen;
     margin-bottom: 30px;
     height: 20px;
 }
+
+/* Top secttion */
+
+.toptitle{
+    font-size: 40px;
+    color: blueviolet;
+    font-weight: bold;
+}
+
 
 nav li {
     float: left;
