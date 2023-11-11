@@ -1,0 +1,17 @@
+body {
+    background-image: url(images/photo1.jpg);
+}
+
+.colorful {
+    color: rgb(248, 248, 248);
+    background: linear-gradient(90deg, rgb(13, 26, 148, 0.75) 0%, rgba(0, 248, 62, 0.658) 100%);
+}
+
+ul {
+    background: rgb(165, 16, 145, 0.255);
+    color: rgb(248, 248, 248);
+}
+
+ul li a {
+    color: rgb(248, 248, 248);
+}
