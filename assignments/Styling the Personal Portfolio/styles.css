@@ -2,6 +2,10 @@
     cursor: url(images/icons8-rocket-48.png), auto;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-image: url(images/bck.png);
     text-align: center;
@@ -85,6 +89,7 @@ section {
 
 .educ ul {
     font-size: 21px;
+    display: inline;
 }
 
 .sect3 {
@@ -101,6 +106,9 @@ section {
     border-collapse: collapse;
     border-color: white;
     font-size: 20px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 th {
@@ -179,6 +187,14 @@ footer {
     background-color: black;
     color: white;
     border-radius: 7px;
+}
+
+.form1 #email {
+    width: 15%;
+}
+
+.form1 #text {
+    width: 40%;
 }
 
 .form1 .submit {
