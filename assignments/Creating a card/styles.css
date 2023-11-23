@@ -22,7 +22,7 @@ body {
 }
 
 .card-container:hover {
-    background-image: linear-gradient(90deg, rgba(21, 40, 235, 1) 0%, rgba(255, 255, 255, 0) 50%, rgba(255, 0, 0, 1) 100%);
+    background-image: linear-gradient(0deg, rgba(224, 9, 9, 0.802) 0%, rgba(255, 255, 255, 0) 50%, rgba(8, 0, 255, 0.7987570028011204) 100%);
 }
 
 .name {
@@ -72,6 +72,8 @@ img {
 .price>span {
     font-size: 19px;
     font-weight: bold;
+    color: blue;
+    text-transform: uppercase;
 }
 
 .car-price span {

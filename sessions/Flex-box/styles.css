@@ -1,0 +1,82 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+nav {
+    background-image: url(images/nav-bgr\ \(2\).png);
+    background-position: -200px;
+    flex: 1;
+}
+
+.nav-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    height: 100vh;
+    padding: 10px;
+}
+
+nav li {
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.active-state {
+    background-color: rgba(172, 19, 19, 0.3)
+}
+
+nav li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+li:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.nav-overlay hr {
+    margin: 15px 0px;
+    color: rgb(167, 167, 167);
+}
+
+.right-side {
+    flex-direction: column;
+    flex: 5;
+    height: 100vh;
+}
+
+header {
+    background-color: rgb(188, 246, 246);
+    padding: 10px;
+
+}
+
+main {
+    display: flex;
+}
+
+article {
+    background-color: rgb(255, 250, 196);
+    padding: 10px;
+    flex: 5;
+    height: 90vh;
+}
+
+aside {
+    background-color: rgb(255, 0, 251);
+    padding: 10px;
+    flex: 1;
+}
+
+footer {
+    background-color: yellow;
+    padding: 10px;
+}
