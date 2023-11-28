@@ -1,0 +1,171 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+.header1 {
+    background-color: navy;
+    height: 100vh;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.header1 h1 {
+    font-size: 30px;
+    color: white;
+    padding: 0px 13px;
+    text-align: right;
+}
+
+.header1 h1 .first {
+    font-weight: lighter;
+}
+
+.header1 nav {
+    align-self: center;
+    position: relative;
+    top: 235px;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    list-style-type: none;
+    float: left;
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    border: 2px solid white;
+    margin: 3px 10px;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background-color: white;
+    color: navy
+}
+
+main {
+    padding: 25px;
+    flex: 4;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: lightcoral;
+}
+
+.second-header {
+    margin-bottom: 40px;
+    display: flex;
+    align-self: center;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    color: white;
+}
+
+.recent-popular li {
+    float: left;
+    margin-left: 16px;
+    list-style-type: none;
+}
+
+.recent-popular li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.15em;
+}
+
+.recent-popular li a:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.active {
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+main .posts {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid blue;
+    padding: 20px;
+    border-radius: 25px;
+    overflow-y: auto;
+    background-color: rgb(255, 255, 203)
+}
+
+.hr1 {
+    width: 47%;
+}
+
+.middle {
+    color: gray;
+    width: 70px;
+    text-align: center;
+}
+
+.articles {
+    margin-bottom: 25px;
+    padding: 10px;
+    line-break: anywhere;
+    line-height: 25px;
+}
+
+.author-photo {
+    align-self: flex-end;
+}
+
+.name-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.social {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.profile {
+    width: 45px;
+    height: 45px;
+    border: 3px solid navy;
+    border-radius: 50%;
+    align-self: flex-end;
+}
+
+.paragraphs {
+    font-size: 18px;
+}
+
+.paragraphs::first-letter {
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.name {
+    text-transform: uppercase;
+    color: rgb(3, 0, 167);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.author {
+    color: green;
+}
