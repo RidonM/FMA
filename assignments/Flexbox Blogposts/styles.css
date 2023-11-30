@@ -65,7 +65,7 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: lightcoral;
+    background-color: rgb(255, 255, 203)
 }
 
 .second-header {
@@ -74,29 +74,29 @@ main {
     align-self: center;
     text-transform: uppercase;
     font-size: 1.4em;
-    color: white;
 }
 
 .recent-popular li {
     float: left;
     margin-left: 16px;
     list-style-type: none;
+    margin-bottom: 3px;
 }
 
 .recent-popular li a {
     text-decoration: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 1.15em;
 }
 
 .recent-popular li a:hover {
     text-decoration: underline;
-    text-decoration-color: white;
+    text-decoration-color: rgb(0, 0, 0);
 }
 
 .active {
     text-decoration: underline;
-    text-decoration-color: white;
+    text-decoration-color: rgb(0, 0, 0);
 }
 
 main .posts {
@@ -106,7 +106,7 @@ main .posts {
     padding: 20px;
     border-radius: 25px;
     overflow-y: auto;
-    background-color: rgb(255, 255, 203)
+    background-color: white;
 }
 
 .hr1 {
