@@ -1,0 +1,16 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div {
+    filter: blur(10px);
+    transition: transform 700ms ease-in 400ms, filter 200ms ease-in 0ms;
+}
+
+div:hover {
+    filter: blur(0);
+    transform: rotate(720deg);
+}
