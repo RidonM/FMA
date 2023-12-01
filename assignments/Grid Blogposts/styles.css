@@ -124,7 +124,7 @@ main .posts {
 .name-profile {
     margin: 0;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: minmax(180px, 1fr) auto;
 }
 
 .author-photo {
