@@ -102,21 +102,25 @@ main {
 main .posts {
     display: flex;
     flex-direction: column;
-    border: 2px solid blue;
     padding: 20px;
+    border: 2px solid blue;
     border-radius: 25px;
     overflow-y: auto;
     background-color: white;
 }
 
-.hr1 {
-    width: 47%;
+main:first-child {
+    position: fixed;
 }
 
 .middle {
     color: gray;
     width: 70px;
     text-align: center;
+}
+
+hr {
+    margin-bottom: 10px;
 }
 
 .articles {
