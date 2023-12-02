@@ -61,6 +61,10 @@ main {
     grid-template-rows: auto 1fr;
 }
 
+hr {
+    margin-bottom: 10px;
+}
+
 .header-rp {
     grid-row: 1 / span 1;
 }
@@ -102,10 +106,6 @@ main .posts {
     overflow-y: auto;
     background-color: white;
     grid-row: 2 / span 1;
-}
-
-.hr1 {
-    width: 47%;
 }
 
 .middle {
