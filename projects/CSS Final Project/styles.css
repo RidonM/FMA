@@ -10,6 +10,18 @@
     --color-gray: #9c9c9c;
 }
 
+.white-background {
+    background-color: var(--color-white);
+}
+
+.gray-color {
+    color: var(--color-gray);
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
 body {
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -18,7 +30,7 @@ body {
     cursor: url(images/icons8-pointer-24.png), auto;
 }
 
-nav {
+aside {
     grid-column: 1 / span 1;
     height: 100vh;
     border: 2px solid black;
@@ -44,12 +56,12 @@ nav {
 
 .nav-header {
     font-size: 1.5em;
-    font-weight: lighter;
     text-transform: uppercase;
     margin-top: 1em;
 }
 
-.nav-header1 {
+.nav-header1,
+.nav-header {
     font-weight: lighter;
 }
 
@@ -131,7 +143,6 @@ header {
 
 .three-dots,
 .search-icon {
-    background-color: var(--color-white);
     color: gray;
     border-radius: 50%;
     padding: 13px;
@@ -209,7 +220,6 @@ header {
 
 .content {
     display: none;
-    background-color: var(--color-white);
     min-width: 275px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -265,7 +275,6 @@ section {
 }
 
 .section1 {
-    background-color: var(--color-white);
     display: flex;
     flex-direction: column;
     padding-left: 1.5rem;
@@ -284,15 +293,19 @@ section {
 
 .world {
     background: radial-gradient(circle, rgba(16, 191, 83, 1) 0%, rgba(23, 162, 76, 1) 100%);
+    top: -30px;
+}
+
+.world,
+.icon22 {
     padding: 20px;
     border-radius: 3px;
     color: var(--color-white);
     position: relative;
-    top: -30px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .title {
-    text-transform: capitalize;
     font-size: 1.6em;
     margin-left: 2em;
 }
@@ -337,16 +350,11 @@ table td {
 }
 
 .sect2 article {
-    background-color: var(--color-white);
     border-radius: 5px;
     padding: .7em;
 }
 
 .icon22 {
-    padding: 20px;
-    border-radius: 3px;
-    color: var(--color-white);
-    position: relative;
     top: -20px;
     left: 15px;
 }
@@ -381,9 +389,7 @@ table td {
 .art1-child1 {
     display: flex;
     align-items: center;
-    color: var(--color-gray);
     font-size: 0.95em;
-    text-transform: capitalize;
 }
 
 .icon-size {
@@ -396,7 +402,6 @@ table td {
 }
 
 .gray-font {
-    color: var(--color-gray);
     text-align: right;
 }
 
@@ -411,7 +416,6 @@ table td {
 }
 
 .sect3-header {
-    text-transform: capitalize;
     font-size: 2em;
 }
 
@@ -422,7 +426,6 @@ table td {
 }
 
 .card-container {
-    background-color: var(--color-white);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -484,20 +487,17 @@ table td {
 
 .card-cap {
     font-size: 1.35rem;
-    text-transform: capitalize;
     align-self: center;
 }
 
 .text-card {
     align-self: center;
     text-align: center;
-    color: var(--color-gray);
     line-height: 22px;
 }
 
 .price-location {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -507,7 +507,6 @@ table td {
 
 .location {
     font-size: 0.9rem;
-    color: var(--color-gray);
     display: flex;
     align-items: center;
 }
@@ -561,7 +560,7 @@ footer a {
         grid-template-columns: 1fr;
     }
 
-    nav {
+    aside {
         display: none;
     }
 
