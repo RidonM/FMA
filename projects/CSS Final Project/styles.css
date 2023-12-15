@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --bck-color: #ebebeb;
     --color-white: #FFFFFF;
@@ -87,9 +91,10 @@ nav h4 {
 
 nav hr {
     width: 90%;
-    margin: 1em auto;
+    margin: 1em 0;
     border: none;
     height: 1px;
+    align-self: center;
     background-color: rgb(88, 88, 88);
 }
 
@@ -117,7 +122,7 @@ nav a {
 }
 
 .active {
-    background-color: rgb(187, 16, 101);
+    background-color: rgb(233, 57, 4);
 }
 
 .hovered:hover {
@@ -125,7 +130,7 @@ nav a {
 }
 
 .page-container {
-    margin: 1rem 2.5rem;
+    margin: 1rem 3%;
     grid-column: 2 / span 1;
 }
 
@@ -554,7 +559,7 @@ footer a {
 }
 
 /* Tablet screen */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
     body {
         display: grid;
         grid-template-columns: 1fr;
@@ -590,11 +595,6 @@ footer a {
 
     table {
         width: 100%;
-    }
-
-    .sect2 {
-        grid-template-columns: 1fr 1fr;
-
     }
 
     .article-container {
