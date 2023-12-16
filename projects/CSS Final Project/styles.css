@@ -410,9 +410,9 @@ table td {
     gap: 1em;
 }
 
-.image-child {
+/* .image-child {
     gap: 1.5em;
-}
+} */
 
 .image-child img {
     border-radius: 7px;
