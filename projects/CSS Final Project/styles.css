@@ -83,7 +83,7 @@ body {
 }
 
 aside {
-    grid-column: 1/span 1;
+    grid-column: 1 / span 1;
     height: 100vh;
     background-image: url(images/sidebar-1.jpg);
     background-size: cover;
