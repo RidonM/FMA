@@ -130,9 +130,7 @@ nav li {
 nav hr {
     width: 90%;
     margin: .9em auto;
-    border: none;
-    height: 1px;
-    background-color: #585858;
+    border: .1px solid #585858;
 }
 
 nav a {
@@ -231,7 +229,7 @@ nav a {
 
 .dropdown a {
     display: block;
-    padding: .75em;
+    padding: .55em;
     margin: 5px;
     border-radius: 5px;
 }
@@ -379,14 +377,15 @@ table td {
 }
 
 .card-container {
-    gap: 3em;
     border-radius: 7px;
     padding: 1em;
+    grid-template-rows: auto 1fr;
 }
 
 .image-child img {
     border-radius: 7px;
-    margin-top: -45px;
+    position: relative;
+    top: -45px;
     z-index: 1;
     transition: transform .5s ease-in-out;
 }
@@ -398,7 +397,7 @@ table td {
 
 .card-icons {
     position: absolute;
-    bottom: 0;
+    bottom: 43px;
 }
 
 .margin-cursor {
@@ -416,6 +415,7 @@ table td {
 
 .card-cap {
     font-size: 1.35rem;
+    text-align: center;
 }
 
 .text-card {
