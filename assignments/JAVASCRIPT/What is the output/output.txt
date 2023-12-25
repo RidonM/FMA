@@ -1,0 +1,9 @@
+let a = 77;
+let b = 55;
+let c;
+b = 44;
+c = b (44); - it means that c is now 44
+b (44) = a(77); - now b is 77
+a (77) = c (44); a is now 44
+
+console.log(a); i think that the final result is 44
