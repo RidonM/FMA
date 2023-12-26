@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The first Native API</title>
+</head>
+
+<body>
+
+    <script>
+
+        let webpageName = prompt("Which website do you want to visit?")
+
+        let webpageUrl = `https://www.${webpageName}.com`
+
+        if (webpageName) {
+            if (webpageName.toLowerCase() === 'google') {
+                let searchQuery = prompt(`What do you want to search on ${webpageName}?`);
+                if (searchQuery) {
+                    let googleSearchURL = `https://www.google.com/search?q=${searchQuery}`;
+                    location.href = googleSearchURL;
+                } else {
+                    alert("No input provided. Please enter a search query.");
+                }
+            } else if (webpageName.toLowerCase() === 'youtube') {
+                let searchQuery = prompt(`What do you want to search on ${webpageName}?`);
+                if (searchQuery) {
+                    let youtubeSearchURL = `https://www.youtube.com/results?search_query=${searchQuery}`;
+                    location.href = youtubeSearchURL;
+                } else {
+                    alert("No input provided. Please enter a search query.");
+                }
+            } else {
+                location.href = webpageUrl;
+            }
+        } else {
+            alert("No input provided. Please enter a website name.");
+        }
+
+    </script>
+</body>
+
+</html>
