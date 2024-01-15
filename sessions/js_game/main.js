@@ -10,12 +10,12 @@ Results: "Congrats" OR "You lost!"
 */
 
 let guess = Math.floor(Math.random() * 10) + 1;
-console.log("The computer guessed" + guess);
+console.log("The computer guessed: " + guess);
 
-let guessNumber = parseInt(prompt("Guess a number 1-10"));
+let guessNumber = parseInt(prompt("Guess a number 1-10: "));
 
 if (guessNumber == guess) {
-    console.log("Congrats"); break;
+    console.log("Congrats");
 }
 
 else {

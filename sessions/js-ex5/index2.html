@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5</title>
+</head>
+
+<body>
+
+    <table id="myfma" border="1" width="50%" cellspacing="5">
+        <tr>
+            <td>Welcome to FMA</td>
+        </tr>
+    </table>
+
+    <script>
+        let buildHtml = "";
+
+
+        for (let run = 1; run <= 10; run++) {
+            buildHtml += "<tr>";
+            buildHtml += '<td class="mycolumn">';
+            buildHtml += run + ". Welcome to FMA";
+            buildHtml += "</td>";
+            buildHtml += "</tr>";
+        }
+
+        document.getElementById("myfma").innerHTML = buildHtml;
+    </script>
+</body>
+
+</html>

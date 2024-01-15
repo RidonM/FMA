@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+</head>
+
+<body>
+    <form action="javascript:checkUser()">
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username"><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+
+        <input type="submit" value="Submit">
+
+        <p id="mgs"></p>
+    </form>
+
+    <script>
+
+        function checkUser() {
+
+
+
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            if (username === 'admin' && password === '12341234') {
+                document.getElementById("mgs").innerHTML = "You are logged in.";
+            }
+
+            else {
+                document.getElementById("mgs").innerHTML = "You typed the wrong credentials.";
+            }
+
+        }
+    </script>
+</body>
+
+</html>
