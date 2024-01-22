@@ -7,14 +7,18 @@ function isValidPercentage(percentage) {
 }
 
 function getProgressColor(percentage) {
-    if (percentage <= 20) {
-        return 'darkred';
-    } else if (percentage <= 50) {
-        return 'orange';
-    } else if (percentage <= 80) {
-        return 'blue';
-    } else {
-        return 'green';
+    switch (true) {
+        case percentage <= 20:
+            return `darkred`;
+            break;
+        case percentage <= 50:
+            return 'orange';
+            break;
+        case percentage <= 80:
+            return `blue`;
+            break;
+        default:
+            return `green`;
     }
 }
 
