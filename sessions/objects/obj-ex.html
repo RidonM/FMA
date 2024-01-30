@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        let cat = {
+            bodyPart1: 'hands',
+            bodyPart2: 'feet',
+            tail: "moving fast",
+            ears: 2,
+            moveTail: function () {
+                console.log(`${this.tail}`);
+            }
+        }
+
+        console.log("My cat's body parts are: ");
+        console.log("- " + cat.bodyPart1);
+        console.log("- " + cat.bodyPart2);
+        console.log("Ears " + cat.ears);
+        cat.moveTail();
+    </script>
+</body>
+
+</html>
