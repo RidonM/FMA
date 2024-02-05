@@ -1,0 +1,19 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(166, 219, 235);
+    border-radius: 50%;
+    position: fixed;
+    opacity: 0.4;
+    animation: upAndDown 1500ms ease infinite alternate;
+}
+
+@keyframes upAndDown {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-20px);
+    }
+}
