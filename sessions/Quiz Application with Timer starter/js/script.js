@@ -1,15 +1,19 @@
 const start_btn = document.querySelector(".start_btn");
 const info_box = document.querySelector(".info_box");
-const exit_btn = document.querySelector(".quit");
+const quit_quiz = document.querySelector(".quit");
 const start_quiz = document.querySelector(".restart");
 const quiz_box = document.querySelector(".quiz_box");
+const timer_sec = document.querySelector(".timer_sec");
+let counter;
+const time_left_txt = document.querySelector(".time_left_txt");
+const total_que = document.querySelector(".total_que");
 
 
 start_btn.addEventListener('click', (event) => {
     info_box.classList.add("activeInfo");
 })
 
-exit_btn.addEventListener('click', (event) => {
+quit_quiz.addEventListener('click', (event) => {
     info_box.classList.remove("activeInfo");
 })
 
@@ -17,7 +21,9 @@ start_quiz.addEventListener('click', (event) => {
     info_box.classList.remove("activeInfo");
     quiz_box.classList.add("activeQuiz");
     showQuestion(0);
+    startTimer(5);
 })
+
 function showQuestion(index) {
     let que_text = document.querySelector(".que_text");
     let option_list = document.querySelector(".option_list");
@@ -31,4 +37,24 @@ function showQuestion(index) {
     }
 
     option_list.innerHTML = hold_options;
+    total_que.textContent = questions[index].numb + " of " + questions.length + " Questions";
+
+}
+
+function startTimer(count) {
+    counter = setInterval(countDown, 1000);
+    function countDown() {
+        if (count < 10) {
+            timer_sec.textContent = "0" + count;
+        }
+        else {
+            timer_sec.textContent = count;
+        }
+
+        if (count == 0) {
+            clearInterval(counter);
+            time_left_txt.textContent = "Time Off";
+        }
+        count--;
+    }
 }
