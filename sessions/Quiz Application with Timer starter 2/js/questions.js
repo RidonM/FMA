@@ -55,6 +55,17 @@ let questions = [
       "eXamine Multiple Language"
     ]
   },
+  {
+    numb: 6,
+    question: "What do you think you think?",
+    answer: "eXtensible Markup Language",
+    options: [
+      "Op1",
+      "Op2",
+      "eXTra Multi-Program Language",
+      "eXamine Multiple Language"
+    ]
+  }
   // you can uncomment the below codes and make duplicate as more as you want to add question
   // but remember you need to give the numb value serialize like 1,2,3,5,6,7,8,9.....
 
