@@ -1,0 +1,40 @@
+body {
+    background-color: rgba(60, 179, 113, .5);
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(166, 219, 235);
+    border-radius: 50%;
+    cursor: pointer;
+    position: fixed;
+    opacity: 0.4;
+    animation: upAndDown 1500ms ease infinite alternate;
+}
+
+.fadeOut {
+    animation: fadeOut 500ms ease forwards;
+}
+
+@keyframes upAndDown {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        transform: scale(1.5);
+        opacity: 0.4;
+    }
+
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
