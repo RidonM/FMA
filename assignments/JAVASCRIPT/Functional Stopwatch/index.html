@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="stopwatchContainer" class="stopwatch">
+        <div id="timeDisplay" class="timedisplay">00:00,00</div>
+        <div class="start">
+            <div class="info">
+                <h4>Lap.no</h4>
+                <h4 class="split">Split</h4>
+                <h4 class="total">Total</h4>
+            </div>
+            <hr>
+            <div id="lapInfo" class="lap-info">
+            </div>
+            <div class="buttons">
+                <button id="resetBtn" class="reset-btn">Reset</button>
+                <button id="lapBtn" class="lap-btn">Lap</button>
+                <button id="stopBtn" class="stop-btn">Stop</button>
+                <button id="startBtn" class="start-btn">Start</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
