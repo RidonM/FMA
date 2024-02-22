@@ -1,9 +1,6 @@
 const timeDisplay = document.querySelector("#timeDisplay");
 
 const lapInfo = document.querySelector("#lapInfo");
-const lapCount = document.querySelector("#lapCount");
-const splitCount = document.querySelector("#splitCount");
-const totalCount = document.querySelector("#totalCount");
 
 const resetBtn = document.querySelector("#resetBtn");
 const lapBtn = document.querySelector("#lapBtn");
@@ -95,12 +92,12 @@ function addLap() {
         totalTime: timeDisplay.textContent
     });
 
-    let html = "";
+    let addLapHtml = "";
     lapsArray.forEach((lapData) => {
-        html += `<span>Lap ${lapData.lapNumber}</span><span class="split">${lapData.lapTime}</span><span class="total">${lapData.totalTime}</span>`;
+        addLapHtml += `<span>Lap ${lapData.lapNumber}</span><span class="split">${lapData.lapTime}</span><span class="total">${lapData.totalTime}</span>`;
     });
 
-    lapInfo.innerHTML = html;
+    lapInfo.innerHTML = addLapHtml;
 
     previousLapEndTime = lapEndTime;
 }
