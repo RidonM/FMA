@@ -19,6 +19,7 @@ body {
 
 .store-products img {
     width: 100%;
+    object-fit: contain;
 }
 
 .card-info {
@@ -87,7 +88,7 @@ body {
 
 .product-info img {
     width: 100%;
-    /* object-fit: cover; */
+    object-fit: contain;
     align-self: center;
 }
 

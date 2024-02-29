@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest API</title>
+</head>
+
+<body>
+    <ul id="list">
+
+    </ul>
+
+    <input type="text" id="input">
+    <button id="button">Search</button>
+    <script>
+        let list = document.getElementById('list');
+
+        const url = 'https://hashtag5.p.rapidapi.com/api/v2.1/tag/trending';
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '541609f8d9msh08e5f442c23daf0p1a6ec8jsn33478ad3710b',
+                'X-RapidAPI-Host': 'hashtag5.p.rapidapi.com'
+            }
+        };
+
+        fetch(url, options)
+            .then((res) => res.json())
+            .then((data) => {
+                data.tags.forEach(tag => {
+                    console.log(tag);
+                    let li = document.createElement('li');
+                    li.textContent = '#' + tag;
+                    list.appendChild(li);
+                });
+            });
+    </script>
+</body>
+
+</html>
