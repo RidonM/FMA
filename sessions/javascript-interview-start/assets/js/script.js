@@ -32,6 +32,7 @@ function listAllMovies(index) {
         buildLi += '<div class="col m0 p0">Length: <span>' + holdAllMovies[i].length + '</span> </div>';
         buildLi += '</div>';
         buildLi += '</li>';
+
+        movielist.innerHTML = buildLi;
     }
-    movielist.innerHTML = buildLi;
 }
