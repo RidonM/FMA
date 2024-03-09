@@ -99,7 +99,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     padding: 1rem 2rem;
     background-color: inherit;
     color: white;
-    margin-top: 2rem;
+    margin-block: 2rem;
     width: min(900px, 95%);
     border-radius: 10px;
     animation: grow 700ms ease forwards, glow 3000ms ease infinite alternate;
