@@ -1,38 +1,58 @@
 const movieGernes = document.querySelector('.movieGernes');
 const movielist = document.querySelector('.movielist');
-const movieDetails = document.querySelector('.movie-details-page');
+const movieDetailsPage = document.querySelector('.movie-details-page');
 
-buildGernes();
-listAllMovies(0);
+// Dropdown for Genres
+let buildGenres = '';
+for (let run = 0; run < allMovies.length; run++) {
+    buildGenres += `<option value="${run}">${allMovies[run].gerne}</option>`;
+}
+movieGernes.innerHTML = buildGenres;
 
-function buildGernes() {
-    let allOptions = "";
-    for (let i = 0; i < allMovies.length; i++) {
-        allOptions += '<option value="' + i + '">' + allMovies[i].gerne + '</option>';
+function populateMovies(opt) {
+    // Populate Movie list based on Genre
+    let buildList = '';
+    const currentGerne = allMovies[opt.value];
+
+    for (let run = 0; run < currentGerne.movies.length; run++) {
+        buildList += `<li class="selected-movie">
+            <h4>${currentGerne.movies[run].title}</h4>
+            <img src="assets/img/${currentGerne.movies[run].thumb}" alt="${currentGerne.movies[run].title}">
+            <p class="description">${currentGerne.movies[run].desc}</p>
+            <div class="row movie-stats mrun prun">
+                <div class="col mrun prun">Date: <span>${currentGerne.movies[run].date}</span> </div>
+                <div class="col mrun prun">Length: <span>${currentGerne.movies[run].length}</span> </div>
+            </div>
+        </li>`;
     }
 
-    movieGernes.innerHTML = allOptions;
-
-    movieGernes.addEventListener('change', function () {
-        listAllMovies(parseInt(this.value));
-    });
+    movielist.innerHTML = buildList;
 }
 
-function listAllMovies(index) {
-    let buildLi = "";
-    let holdAllMovies = allMovies[index].movies;
+movieGernes.addEventListener('change', function () {
+    populateMovies(this);
+});
 
-    for (let i = 0; i < allMovies[index].movies.length; i++) {
-        buildLi += '<li class="selected-movie">';
-        buildLi += '<h4>' + holdAllMovies[i].title + '</h4>';
-        buildLi += '<img src="assets/img/' + holdAllMovies[i].thumb + '" alt="Plane">';
-        buildLi += '<p class="description">' + holdAllMovies[i].desc + '</p>';
-        buildLi += '<div class="row movie-stats m0 p0">';
-        buildLi += '<class="col m0 p0">Date: <span>' + holdAllMovies[i].date + '</span> </div>';
-        buildLi += '<div class="col m0 p0">Length: <span>' + holdAllMovies[i].length + '</span> </div>';
-        buildLi += '</div>';
-        buildLi += '</li>';
 
-        movielist.innerHTML = buildLi;
-    }
+// Load Movie Details Page
+function loadDetailPage(g, m) {
+
 }
+
+let buildDetailPage = `
+    <h1>Plane (2023)</h1>
+    <h4>Date: 02-24-2023 | Length: 108min</h4>
+    <div class="container">
+        <iframe class="responsive-iframe"
+            src="https://www.youtube.com/embed/M25zXBIUVr0?si=2_Np20M6IFPMasOu"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+
+    <h4>Gerard Butler, Mike Colter, Tony Goldwyn, Yoson An</h4>
+    <p>On an initially routine flight, the protagonist ends up saving passengers through an
+        emergency landing following a lightning strike.</p>
+    `;
+
+movieDetailsPage = buildDetailPage;
