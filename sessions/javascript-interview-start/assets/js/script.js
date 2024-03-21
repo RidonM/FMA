@@ -1,58 +1,77 @@
 const movieGernes = document.querySelector('.movieGernes');
 const movielist = document.querySelector('.movielist');
 const movieDetailsPage = document.querySelector('.movie-details-page');
+const listItems = document.querySelector('#list');
 
-// Dropdown for Genres
-let buildGenres = '';
-for (let run = 0; run < allMovies.length; run++) {
-    buildGenres += `<option value="${run}">${allMovies[run].gerne}</option>`;
+populateMovies(0);
+loadDetailPage(0, 2);
+
+/* Dropdown for Gernes */
+let buildGernes = '';
+for (var run = 0; run < allMovies.length; run++) {
+    buildGernes += `
+        <option value="${run}">${allMovies[run].gerne}</option>
+    `;
 }
-movieGernes.innerHTML = buildGenres;
+movieGernes.innerHTML = buildGernes;
 
-function populateMovies(opt) {
-    // Populate Movie list based on Genre
+/* Populate Movie list based on Gernes */
+function populateMovies(g) {
     let buildList = '';
-    const currentGerne = allMovies[opt.value];
+    let currentGerne = allMovies[g];
 
     for (let run = 0; run < currentGerne.movies.length; run++) {
-        buildList += `<li class="selected-movie">
-            <h4>${currentGerne.movies[run].title}</h4>
-            <img src="assets/img/${currentGerne.movies[run].thumb}" alt="${currentGerne.movies[run].title}">
-            <p class="description">${currentGerne.movies[run].desc}</p>
-            <div class="row movie-stats mrun prun">
-                <div class="col mrun prun">Date: <span>${currentGerne.movies[run].date}</span> </div>
-                <div class="col mrun prun">Length: <span>${currentGerne.movies[run].length}</span> </div>
-            </div>
-        </li>`;
+        buildList += `
+                <li id="list" onclick="selectedMovie(this, ${g}, ${run})">
+                    <h4>${currentGerne.movies[run].title}</h4>
+                    <img src="assets/img/${currentGerne.movies[run].thumb}" alt="${currentGerne.movies[run].title}">
+                    <p class="description">${currentGerne.movies[run].desc}</p>
+                    <div class="row movie-stats m0 p0">
+                        <div class="col m0 p0">Date: <span>${currentGerne.movies[run].date}</span> </div>
+                        <div class="col m0 p0">Length: <span>${currentGerne.movies[run].length}</span> </div>
+                    </div>
+                </li>
+            `;
     }
-
     movielist.innerHTML = buildList;
+    loadDetailPage(g, 0);
 }
 
-movieGernes.addEventListener('change', function () {
-    populateMovies(this);
-});
+// selected movie
+
+function selectedMovie(_li, g, m) {
+    const selectedMovie = document.querySelector(".selected-movie");
+    if (selectedMovie) {
+        selectedMovie.classList.remove("selected-movie");
+    }
+    _li.classList.add('selected-movie');
+
+    loadDetailPage(g, m);
+}
 
 
-// Load Movie Details Page
+/* Load Movie Details Page */
+
 function loadDetailPage(g, m) {
+    let currentGerne = allMovies[g];
 
+
+    let listActors = "";
+    currentGerne.movies[m].actors.forEach((item) => {
+        listActors += item + ',';
+    })
+
+    let buildDetailPage = `
+            <h1>${currentGerne.movies[m].title} (2023)</h1>
+            <h4>Date: ${currentGerne.movies[m].date} | Length: ${currentGerne.movies[m].length} min</h4>
+            <div class="container">
+                ${currentGerne.movies[m].trailer}
+            </div>
+
+            <h4>${listActors}</h4 >
+    <p>${currentGerne.movies[m].desc}</p>
+`;
+
+    movieDetailsPage.innerHTML = buildDetailPage;
 }
 
-let buildDetailPage = `
-    <h1>Plane (2023)</h1>
-    <h4>Date: 02-24-2023 | Length: 108min</h4>
-    <div class="container">
-        <iframe class="responsive-iframe"
-            src="https://www.youtube.com/embed/M25zXBIUVr0?si=2_Np20M6IFPMasOu"
-            title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-    </div>
-
-    <h4>Gerard Butler, Mike Colter, Tony Goldwyn, Yoson An</h4>
-    <p>On an initially routine flight, the protagonist ends up saving passengers through an
-        emergency landing following a lightning strike.</p>
-    `;
-
-movieDetailsPage = buildDetailPage;
