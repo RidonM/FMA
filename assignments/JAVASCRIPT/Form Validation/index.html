@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email and Password Validation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Email and Password Validation</h1>
+    <form id="myForm">
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        <div id="requirements">
+            <p id="lowercase-req">At least one lowercase letter</p>
+            <p id="uppercase-req">At least one uppercase letter</p>
+            <p id="number-req">At least one number</p>
+            <p id="special-req">At least one of the following characters: (.,'!#)</p>
+        </div>
+        <input type="submit" id="submit-btn" value="Submit" disabled>
+    </form>
+    <div id="message"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

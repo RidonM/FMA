@@ -12,8 +12,8 @@ for (var run = 0; run < allMovies.length; run++) {
     buildGernes += `
         <option value="${run}">${allMovies[run].gerne}</option>
     `;
+    movieGernes.innerHTML = buildGernes;
 }
-movieGernes.innerHTML = buildGernes;
 
 /* Populate Movie list based on Gernes */
 function populateMovies(g) {
