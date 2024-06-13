@@ -1,0 +1,17 @@
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+}
+
+nav ul a {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(92, 92, 92);
+}
+
+nav ul a:hover {
+    background-color: rgb(109, 109, 109);
+    color: white;
+}
