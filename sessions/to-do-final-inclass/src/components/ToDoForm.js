@@ -21,34 +21,34 @@ const ToDoForm = ({ addTask }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input 
-        type="text" 
-        value={task} 
-        onChange={(e) => setTask(e.target.value)} 
-        placeholder="Add a new task" 
+      <input
+        type="text"
+        value={task}
+        onChange={(e) => setTask(e.target.value)}
+        placeholder="Add a new task"
       />
-      <input 
-        type="date" 
-        value={date} 
-        onChange={(e) => setDate(e.target.value)} 
+      <input
+        type="date"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
       />
-      <input 
-        type="time" 
-        value={time} 
-        onChange={(e) => setTime(e.target.value)} 
+      <input
+        type="time"
+        value={time}
+        onChange={(e) => setTime(e.target.value)}
       />
       <label>
         Important
-        <input 
-          type="checkbox" 
-          checked={isImportant} 
-          onChange={(e) => setIsImportant(e.target.checked)} 
+        <input
+          type="checkbox"
+          checked={isImportant}
+          onChange={(e) => setIsImportant(e.target.checked)}
         />
       </label>
-      <input 
-        type="color" 
-        value={color} 
-        onChange={(e) => setColor(e.target.value)} 
+      <input
+        type="color"
+        value={color}
+        onChange={(e) => setColor(e.target.value)}
       />
       <button type="submit">Add</button>
     </form>

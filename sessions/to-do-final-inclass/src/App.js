@@ -22,38 +22,40 @@ function App() {
     setTasks([...tasks, task]);
   };
 
+  // 
   const toggleCompleted = (index) => {
-    const newTasks = tasks.map((task, i) => 
+    const newTasks = tasks.map((task, i) =>
       i === index ? { ...task, isCompleted: !task.isCompleted } : task
     );
     setTasks(newTasks);
   };
 
   const updateTask = (index, updatedTask) => {
-    const newTasks = tasks.map((task, i) => 
+    const newTasks = tasks.map((task, i) =>
       i === index ? updatedTask : task
     );
     setTasks(newTasks);
   };
+  // ----
+
 
   const filterTasks = (filterType) => {
     setFilter(filterType);
     const today = new Date();
-    const yesterday = today.getDate() - 1;
-    const tomorrow = today.getDate() + 1;
+    const yesterday = new Date();
+    const tomorrow = new Date();
+
+    yesterday.setDate(today.getDate() - 1);
+    tomorrow.setDate(today.getDate() + 1);
 
     const filtered = tasks.filter((task) => {
       const taskDate = new Date(task.date);
       if (filterType === 'yesterday') {
-        return (
-          taskDate.toDateString() === new Date(today.setDate(yesterday)).toDateString()
-        );
+        return taskDate.toDateString() === yesterday.toDateString();
       } else if (filterType === 'today') {
         return taskDate.toDateString() === today.toDateString();
       } else if (filterType === 'tomorrow') {
-        return (
-          taskDate.toDateString() === new Date(today.setDate(tomorrow)).toDateString()
-        );
+        return taskDate.toDateString() === tomorrow.toDateString();
       } else {
         return true;
       }

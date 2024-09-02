@@ -26,47 +26,46 @@ const ToDoItem = ({ task, index, toggleCompleted, updateTask }) => {
     <li style={{ textDecoration: task.isCompleted ? 'line-through' : 'none', color: task.color }}>
       {isEditing ? (
         <div>
-          <input 
-            type="text" 
-            value={editedTask} 
-            onChange={(e) => setEditedTask(e.target.value)} 
+          <input
+            type="text"
+            value={editedTask}
+            onChange={(e) => setEditedTask(e.target.value)}
           />
-          <input 
-            type="date" 
-            value={editedDate} 
-            onChange={(e) => setEditedDate(e.target.value)} 
+          <input
+            type="date"
+            value={editedDate}
+            onChange={(e) => setEditedDate(e.target.value)}
           />
-          <input 
-            type="time" 
-            value={editedTime} 
-            onChange={(e) => setEditedTime(e.target.value)} 
+          <input
+            type="time"
+            value={editedTime}
+            onChange={(e) => setEditedTime(e.target.value)}
           />
           <label>
             Important
-            <input 
-              type="checkbox" 
-              checked={editedIsImportant} 
-              onChange={(e) => setEditedIsImportant(e.target.checked)} 
+            <input
+              type="checkbox"
+              checked={editedIsImportant}
+              onChange={(e) => setEditedIsImportant(e.target.checked)}
             />
           </label>
-          <input 
-            type="color" 
-            value={editedColor} 
-            onChange={(e) => setEditedColor(e.target.value)} 
+          <input
+            type="color"
+            value={editedColor}
+            onChange={(e) => setEditedColor(e.target.value)}
           />
           <button onClick={handleSave}>Save</button>
           <button onClick={() => setIsEditing(false)}>Cancel</button>
         </div>
       ) : (
-        <div>
-          {task.task} - {task.date} {task.time}
+        <div>{task.task} - {task.datetime}
           {task.isImportant && <strong> (Important) </strong>}
-          <button onClick={() => toggleCompleted(index)}>
-            <FontAwesomeIcon icon={faCheck} />
-          </button>
-          <button onClick={() => setIsEditing(true)}>
-            <FontAwesomeIcon icon={faEdit} />
-          </button>
+          <div class="task-icones">
+            <span class="material-icons verified">verified</span>
+            <span class="material-icons edit">edit</span>
+
+          </div>
+
         </div>
       )}
     </li>
