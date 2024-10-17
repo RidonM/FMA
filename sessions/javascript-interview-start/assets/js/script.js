@@ -1,27 +1,27 @@
-const movieGernes = document.querySelector('.movieGernes');
-const movielist = document.querySelector('.movielist');
-const movieDetailsPage = document.querySelector('.movie-details-page');
-const listItems = document.querySelector('#list');
+const movieGernes = document.querySelector(".movieGernes");
+const movielist = document.querySelector(".movielist");
+const movieDetailsPage = document.querySelector(".movie-details-page");
+const listItems = document.querySelector("#list");
 
 populateMovies(0);
 loadDetailPage(0, 2);
 
 /* Dropdown for Gernes */
-let buildGernes = '';
+let buildGernes = "";
 for (var run = 0; run < allMovies.length; run++) {
-    buildGernes += `
+  buildGernes += `
         <option value="${run}">${allMovies[run].gerne}</option>
     `;
-    movieGernes.innerHTML = buildGernes;
+  movieGernes.innerHTML = buildGernes;
 }
 
 /* Populate Movie list based on Gernes */
 function populateMovies(g) {
-    let buildList = '';
-    let currentGerne = allMovies[g];
+  let buildList = "";
+  let currentGerne = allMovies[g];
 
-    for (let run = 0; run < currentGerne.movies.length; run++) {
-        buildList += `
+  for (let run = 0; run < currentGerne.movies.length; run++) {
+    buildList += `
                 <li id="list" onclick="selectedMovie(this, ${g}, ${run})">
                     <h4>${currentGerne.movies[run].title}</h4>
                     <img src="assets/img/${currentGerne.movies[run].thumb}" alt="${currentGerne.movies[run].title}">
@@ -32,36 +32,34 @@ function populateMovies(g) {
                     </div>
                 </li>
             `;
-    }
-    movielist.innerHTML = buildList;
-    loadDetailPage(g, 0);
+  }
+  movielist.innerHTML = buildList;
+  loadDetailPage(g, 0);
 }
 
 // selected movie
 
 function selectedMovie(_li, g, m) {
-    const selectedMovie = document.querySelector(".selected-movie");
-    if (selectedMovie) {
-        selectedMovie.classList.remove("selected-movie");
-    }
-    _li.classList.add('selected-movie');
+  const selectedMovie = document.querySelector(".selected-movie");
+  if (selectedMovie) {
+    selectedMovie.classList.remove("selected-movie");
+  }
+  _li.classList.add("selected-movie");
 
-    loadDetailPage(g, m);
+  loadDetailPage(g, m);
 }
-
 
 /* Load Movie Details Page */
 
 function loadDetailPage(g, m) {
-    let currentGerne = allMovies[g];
+  let currentGerne = allMovies[g];
 
+  let listActors = "";
+  currentGerne.movies[m].actors.forEach((item) => {
+    listActors += item + ",";
+  });
 
-    let listActors = "";
-    currentGerne.movies[m].actors.forEach((item) => {
-        listActors += item + ',';
-    })
-
-    let buildDetailPage = `
+  let buildDetailPage = `
             <h1>${currentGerne.movies[m].title} (2023)</h1>
             <h4>Date: ${currentGerne.movies[m].date} | Length: ${currentGerne.movies[m].length} min</h4>
             <div class="container">
@@ -71,7 +69,6 @@ function loadDetailPage(g, m) {
             <h4>${listActors}</h4 >
     <p>${currentGerne.movies[m].desc}</p>
 `;
-
-    movieDetailsPage.innerHTML = buildDetailPage;
+  console.log("ridon121", buildDetailPage);
+  movieDetailsPage.innerHTML = buildDetailPage;
 }
-

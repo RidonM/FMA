@@ -1,0 +1,3 @@
+npm init me inicializu package.json ose projektin
+
+Detyr shtepie me marr dinon -- me provu for loop me 10 milion her 
